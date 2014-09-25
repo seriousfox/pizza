@@ -774,7 +774,9 @@ $.extend(Pizza, {
       }
 
       var percent = (data[i].value / total) * 100.0;
-
+      if (isNaN(data[i].value) || isNaN(total) ) {
+        percent = 0;
+      };
       var existing_text = $('text[data-id="s' + i + '"]', svg);
 
       if (existing_text.length > 0) {
